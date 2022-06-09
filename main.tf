@@ -4,6 +4,9 @@ resource "aws_instance" "jenkins" {
   subnet_id = var.subnet_id
   security_groups =[var.security_group_id]
   key_name= var.key_name
+  tags = {
+    Name = "instance_Jenkins"
+  }
   credit_specification {
     cpu_credits = "unlimited"
   }
